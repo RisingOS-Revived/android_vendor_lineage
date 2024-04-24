@@ -1,6 +1,12 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
+# Pixel additions
+ifeq ($(WITH_GMS),true)
+$(call inherit-product, vendor/google/overlays/ThemeIcons/config.mk)
+$(call inherit-product, vendor/pixel-style/config/common.mk)
+endif
+
 PRODUCT_BRAND ?= risingOS
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
@@ -147,7 +153,6 @@ PRODUCT_COPY_FILES += \
 
 # Config
 PRODUCT_PACKAGES += \
-    SimpleDeviceConfig \
     SimpleSettingsConfig
 
 # Extra tools in Lineage
@@ -202,9 +207,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     rsync
 
+ifeq ($(WITH_GMS),false)
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
+endif
 
 # These packages are excluded from user builds
 PRODUCT_PACKAGES_DEBUG += \
@@ -242,9 +249,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 
 # SetupWizard
+ifeq ($(WITH_GMS),false)
 PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.theme=glif_v4 \
     setupwizard.feature.day_night_mode_enabled=true
+endif
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lineage/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
