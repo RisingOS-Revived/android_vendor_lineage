@@ -6,7 +6,8 @@ PRODUCT_SIZE := full
 # Apps
 PRODUCT_PACKAGES += \
     Profiles \
-    Seedvault
+    Seedvault \
+    Jelly
 
 ifeq ($(WITH_GMS),false)
 PRODUCT_PACKAGES += \
