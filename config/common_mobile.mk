@@ -20,23 +20,6 @@ PRODUCT_PACKAGES += \
     Glimpse \
     LatinIME
 
-ifeq ($(PRODUCT_TYPE), go)
-PRODUCT_PACKAGES += \
-    Launcher3QuickStepGo
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStepGo
-else
-PRODUCT_PACKAGES += \
-    Launcher3QuickStep
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStep
-endif
-
-PRODUCT_PACKAGES += \
-    Launcher3Overlay
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -78,6 +61,5 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 
 # Themes
 PRODUCT_PACKAGES += \
-    LineageBlackTheme \
     ThemePicker \
     ThemesStub
