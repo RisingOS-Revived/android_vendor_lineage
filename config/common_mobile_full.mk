@@ -6,15 +6,15 @@ PRODUCT_SIZE := full
 # Apps
 PRODUCT_PACKAGES += \
     Profiles \
-    Seedvault \
-    Jelly
+    Seedvault
 
 ifeq ($(WITH_GMS),false)
 PRODUCT_PACKAGES += \
     Camelot \
     Etar \
     Recorder \
-    Twelve
+    Twelve \
+    Jelly
 endif
 
 ifneq ($(PRODUCT_NO_CAMERA),true)
