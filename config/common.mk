@@ -415,4 +415,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     
 include vendor/lineage/config/version.mk
 
+-include vendor/lineage-priv/keys/keys.mk
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
