@@ -18,6 +18,10 @@ DONT_DEXPREOPT_PREBUILTS := true
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 endif
 
+# Keybox
+PRODUCT_PACKAGES += \
+    CertifiedKeyboxOverlay
+
 # Other ROM feature flags
 PERF_ANIM_OVERRIDE ?= false
 BYPASS_CHARGE_SUPPORTED ?= false
