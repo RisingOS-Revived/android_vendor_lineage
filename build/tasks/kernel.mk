@@ -733,13 +733,6 @@ $(TARGET_PREBUILT_INT_KERNEL): $(DEPMOD) $(KERNEL_MODULES_PARTITION_FILE_LIST) $
 	($(call build-image-kernel-modules-lineage,$$vendor_modules,$(KERNEL_MODULES_OUT),$(KERNEL_MODULE_MOUNTPOINT)/,$(KERNEL_DEPMOD_STAGING_DIR),$(BOARD_VENDOR_KERNEL_MODULES_LOAD),,$(KERNEL_MODULES_PARTITION_FILE_LIST),$(SYSTEM_KERNEL_DEPMOD_STAGING_DIR)/lib/modules/0.0/$(SYSTEM_KERNEL_MODULE_MOUNTPOINT)))
 endif
 
-ifeq ($(NEEDS_KERNEL_COPY),true)
-$(INSTALLED_KERNEL_TARGET): $(KERNEL_BIN)
-	$(transform-prebuilt-to-target)
-	$(if $(filter true,$(FULL_KERNEL_BUILD)),\
-		$(call append-dtbs-to-kernel-image,$(KERNEL_OUT),$@))
-endif
-
 .PHONY: kernel
 kernel: $(INSTALLED_KERNEL_TARGET)
 
