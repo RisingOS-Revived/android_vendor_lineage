@@ -18,9 +18,12 @@ DONT_DEXPREOPT_PREBUILTS := true
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 endif
 
-# Bypass Charge
+# Other ROM feature flags
+PERF_ANIM_OVERRIDE ?= false
 BYPASS_CHARGE_SUPPORTED ?= false
+
 PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE)
     persist.sys.battery_bypass_supported=$(BYPASS_CHARGE_SUPPORTED)
 
 PRODUCT_BRAND ?= risingOS
