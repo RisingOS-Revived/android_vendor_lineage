@@ -18,6 +18,10 @@ $(call inherit-product, vendor/pixel-style/config/common.mk)
 DONT_DEXPREOPT_PREBUILTS := true
 endif
 
+# Use a generic profile based boot image by default
+PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/boot/boot-image-profile.txt
+
 PRODUCT_BRAND ?= risingOS
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
