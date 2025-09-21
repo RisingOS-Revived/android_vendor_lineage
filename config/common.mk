@@ -25,10 +25,12 @@ PRODUCT_PACKAGES += \
 # Other ROM feature flags
 PERF_ANIM_OVERRIDE ?= false
 BYPASS_CHARGE_SUPPORTED ?= false
+TORCH_STR_SUPPORTED ?= true
 
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE)
-    persist.sys.battery_bypass_supported=$(BYPASS_CHARGE_SUPPORTED)
+    persist.sys.battery_bypass_supported=$(BYPASS_CHARGE_SUPPORTED) \
+    persist.sys.torch_str_support=$(TORCH_STR_SUPPORTED)
 
 PRODUCT_BRAND ?= risingOS
 
