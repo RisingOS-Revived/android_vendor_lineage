@@ -34,6 +34,22 @@ endif
 DONT_DEXPREOPT_PREBUILTS := true
 endif
 
+# BuildFingerprint spoof to fix RCS/Wallet
+# Applies to all devices EXCEPT currently-supported Pixels (they don't need it)
+TARGET_ENABLE_FP_OVERRIDE ?= true
+ifeq ($(TARGET_ENABLE_FP_OVERRIDE),true)
+ifeq ($(filter $(LINEAGE_BUILD), \
+    cheetah panther lynx \
+    husky shiba akita felix tangorpro \
+    tokay caiman komodo comet tegu \
+    mustang blazer frankel rango \
+    stallion \
+    ),)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildFingerprint=google/bluejay_beta/bluejay:CANARY/ZP11.260918.007/16484274:user/release-keys
+endif
+endif
+
 # Use a generic profile based boot image by default
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_COPY_FILES += \
