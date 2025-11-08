@@ -248,10 +248,11 @@ PRODUCT_PACKAGES += \
     getcap \
     setcap
 
-# LMOFreeForm
+# LMO packages
 PRODUCT_PACKAGES += \
     LMOFreeform \
-    LMOFreeformSidebar
+    LMOFreeformSidebar \
+    LMOSystemUIClock
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/curl \
