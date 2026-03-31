@@ -341,6 +341,12 @@ endif
 # Other ROM feature flags
 PERF_ANIM_OVERRIDE ?= false
 
+# SF Boost
+ifeq ($(SURFACE_FLINGER_BOOST),true)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.surface_flinger.uclamp.min=180
+endif
+
 # rsync
 PRODUCT_PACKAGES += \
     rsync
