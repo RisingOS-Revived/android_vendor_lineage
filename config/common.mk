@@ -331,6 +331,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
+    AppLocker \
     GameSpace \
     Launcher3QuickStep \
     Settings \
