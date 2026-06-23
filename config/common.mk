@@ -43,6 +43,10 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 
 PRODUCT_BRAND ?= risingOS
 
+# Enable background blur for widget picker
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.launcher.depth.widget=true
+
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.clientidbase=android-google
