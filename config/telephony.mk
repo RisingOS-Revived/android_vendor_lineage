@@ -33,3 +33,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Disable mobile data by default
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.android.mobiledata=false
+
+# Inherit BCR
+$(call inherit-product, vendor/addons/bcr/bcr.mk)
