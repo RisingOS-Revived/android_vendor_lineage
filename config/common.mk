@@ -32,6 +32,9 @@ endif
 
 # Don't dexpreopt prebuilts. (For GMS).
 DONT_DEXPREOPT_PREBUILTS := true
+
+# Relax library check
+RELAX_USES_LIBRARY_CHECK=true
 endif
 
 # Use a generic profile based boot image by default
