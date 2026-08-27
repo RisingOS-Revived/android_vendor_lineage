@@ -5,14 +5,14 @@ PRODUCT_SIZE := full
 
 # Apps
 PRODUCT_PACKAGES += \
-    Camelot \
-    Etar \
     Profiles \
-    Recorder \
     Seedvault
 
 ifeq ($(WITH_GMS),false)
 PRODUCT_PACKAGES += \
+    Camelot \
+    Etar \
+    Recorder \
     Twelve
 endif
 
