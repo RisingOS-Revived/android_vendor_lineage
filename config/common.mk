@@ -377,7 +377,7 @@ endif
 
 # SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    AppLocker \
+    AxSandbox \
     Launcher3QuickStep \
     Settings \
     SettingsGoogle \
